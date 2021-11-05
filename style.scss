@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+$primaryColor : rgba(21, 43, 3, 0.952);
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 80vw;
+  height: 60vh;
+  max-width: 1170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+    #number {
+        font-size: 8rem;
+        color: $primaryColor;
+    }
+    h1 {
+        font-size: 3rem;
+        color: $primaryColor;
+        animation: pulse 1s infinite alternate-reverse;
+    }
+}
+
+button {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  border: none;
+  outline: 2px solid black;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  transition: 1s;
+  position: relative;
+  z-index: 1;
+}
+
+#dec{
+    background-color: red;
+}
+
+#dec:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    // border-radius: 15px; 
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 1s ease-in-out;
+}
+
+#dec:hover::before{
+    transform: scaleX(1);
+}
+
+#inc{
+    background-color: greenyellow;
+}
+
+#inc:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: green;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease-in-out;
+}
+
+#inc:hover::before{
+    transform: scaleX(1);
+}
+
+#res:hover{
+    background-color: $primaryColor;
+    color: aliceblue;
+}
+
+@keyframes pulse { 
+    from{
+        font-size: 3rem
+    }
+    to{
+        font-size: 5rem
+    }
+}
